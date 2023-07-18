@@ -1,56 +1,135 @@
-let c = 0;
-let p = 0;
-function game() { 
-let choice = prompt('Rock, Paper or Scissors?');   
-const playerSelection = choice.toUpperCase();
+let computer = 0;
+let player = 0;
 
-function getComputerChoice() {
-	const RpS = ['Rock','Paper','Scissors'];
-	const randomElement = RpS[Math.floor(Math.random() * RpS.length)];
-	return randomElement.toUpperCase(); }
-const computerSelection = getComputerChoice();
-function playRound(playerSelection, computerSelection)
+const buttons = document.querySelector('.buttons');
+const restart = document.querySelector('.restart');
+
+	buttons.addEventListener ("click", () => {
+		document.getElementById("pscore").innerHTML = `You: ${player}`;
+		document.getElementById("cscore").innerHTML = `Computer : ${computer}`;
+	});
+
+	const rock = document.querySelector('.rock');
+	rock.addEventListener ('click',() => {
+		let computerSelection = getComputerChoice();
+		function getComputerChoice() {
+		const RpS = ['Rock','Paper','Scissors'];
+		const randomElement = RpS[Math.floor(Math.random() * RpS.length)];
+		return randomElement.toUpperCase(); };
+	playRound('ROCK', computerSelection);
+	});
+
+	const paper = document.querySelector('.paper');
+	paper.addEventListener ('click',() => {
+		let computerSelection = getComputerChoice();
+		function getComputerChoice() {
+		const RpS = ['Rock','Paper','Scissors'];
+		const randomElement = RpS[Math.floor(Math.random() * RpS.length)];
+		return randomElement.toUpperCase(); };
+	playRound('PAPER', computerSelection);
+	});
+
+	const scissors = document.querySelector('.scissors');
+	scissors.addEventListener ('click',() => {
+		let computerSelection = getComputerChoice();
+		function getComputerChoice() {
+		const RpS = ['Rock','Paper','Scissors'];
+		const randomElement = RpS[Math.floor(Math.random() * RpS.length)];
+		return randomElement.toUpperCase(); };
+	playRound('SCISSORS', computerSelection);
+	});
+
+	function playRound(playerSelection, computerSelection)
 	{ if ( playerSelection === 'ROCK' && computerSelection === 'SCISSORS') {
-		alert("You win, Rock beats Scissors");
-		(p++);}
+		(player++);
+		document.getElementById("complete").innerHTML = `You WIN. The Computer chose SCISSORS`;
+		{ if
+		(player === 5 || computer === 5) {
+			results(player, computer);
+		}};
+	}
 		else if ( playerSelection === 'ROCK' && computerSelection === 'ROCK') {
-		alert("No winner, you both chose Rock");}
+		document.getElementById("complete").innerHTML = `You BOTH chose ROCK`;
+		{ if
+			(player === 5 || computer === 5) {
+				results(player, computer);
+			}};
+		}
 		else if ( playerSelection === 'ROCK' && computerSelection === 'PAPER') {
-		alert("You Lose, Paper beats Rock");
-		(c++);}
+		(computer++);
+		document.getElementById("complete").innerHTML = `You LOSE. The Computer chose PAPER`;{ if
+			(player === 5 || computer === 5) {
+				results(player, computer);
+			}};
+		}
 		else if ( playerSelection === 'PAPER' && computerSelection === 'PAPER') {
-		alert("No winner, you both chose Paper");}
+				document.getElementById("complete").innerHTML = `You BOTH chose PAPER`;
+		{ if
+			(player === 5 || computer === 5) {
+				results(player, computer);
+			}};
+		}
 		else if ( playerSelection === 'PAPER' && computerSelection === 'SCISSORS') {
-		alert("You lose, Scissors beats Paper");
-		(c++);}
+		(computer++);
+		document.getElementById("complete").innerHTML = `You LOSE. The Computer chose SCISSORS`;
+		{ if
+			(player === 5 || computer === 5) {
+				results(player, computer);
+			}};
+		}
 		else if ( playerSelection === 'PAPER' && computerSelection === 'ROCK') {
-		alert("You win, Paper beats Rock");
-		(p++);}
+		(player++);
+		document.getElementById("complete").innerHTML = `You WIN. The Computer chose ROCK`;{ if
+			(player === 5 || computer === 5) {
+				results(player, computer);
+			}};
+		}
 		else if ( playerSelection === 'SCISSORS' && computerSelection === 'SCISSORS') {
-		alert("No winner, you both chose Scissors");}
+			document.getElementById("complete").innerHTML = `You BOTH chose SCISSORS`; 
+			{ if
+			(player === 5 || computer === 5) {
+				results(player, computer);
+			}};
+		}
 		else if ( playerSelection === 'SCISSORS' && computerSelection === 'PAPER') {
-		alert("You win, Scissors beats Paper");
-		(p++);}
+		(player++);
+		document.getElementById("complete").innerHTML = `You WIN. The computer chose PAPER`;
+		{ if
+			(player === 5 || computer === 5) {
+				results(player, computer);
+			}};
+		}
 		else if ( playerSelection === 'SCISSORS' && computerSelection === 'ROCK') {
-		alert("You lose, Rock beats Scissors");
-		(c++);}
-		else {alert("Something went wrong, refresh page");}
-}
-console.log(playRound(playerSelection, computerSelection));
-}
-console.log(game());
-console.log(game());
-console.log(game());
-console.log(game());
-console.log(game());
-function results(p, c) {
-	if ( p > c ) {
-	alert ("Congratulations, you have defeated the Computer!");}
-	else if ( p < c ) {
-	alert("You have been defeated by the Computer!");}
-	else if ( p === c ) {
-	alert("You both tie");}
+		(computer++);
+		document.getElementById("complete").innerHTML = `You LOSE. The Computer chose ROCK`;
+		{ if
+			(player === 5 || computer === 5) {
+				results(player, computer);
+			}};
+		}
+		else {alert("Something went wrong, refresh page");
+		location.reload();}
+};
+
+
+function results(player, computer) {
+	if ( player > computer ) {
+		document.getElementById("complete").innerHTML = "<p style='color: yellow';>YOU HAVE DEFEATED THE COMPUTER</p>";
+		restart.classList.remove('restart');
+		restart.classList.add('renovar');
+	}
+	else if ( player < computer ) {
+		document.getElementById("complete").innerHTML = "<p style='color: red';>YOU HAVE BEEN DEFEATED BY THE COMPUTER</p>";
+		restart.classList.remove('restart');
+		restart.classList.add('renovar');
+	}
+	else if ( player === computer ) {
+	alert("You both tie");
+	location.reload();}
 	else {
-	alert("Something went wrong, refresh to begin the battle");}
-}
-console.log(results(p, c));
+	alert("Something went wrong, refresh to begin the battle");
+	location.reload();}
+} 
+
+
+	

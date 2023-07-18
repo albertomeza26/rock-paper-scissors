@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src = "RPS.js"> </script>
-    <title>Document</title>
-</head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<script src="RPS.js" defer></script>
+<title>
+RPS Game
+</title>
 <body>
-    <p></p>
+<h1> ROCK, PAPER, SCISSORS </h1>
+<p id="complete"></p>
+<div class="play-again">
+    <button class="restart" onClick="window.location.reload();">Play Again</button>
+</div>
+<div class="buttons">
+<button class="rock"><img src="images/rock.png" alt="rock"></button>
+<button class="paper"><img src="images/paper.png" alt="paper"></button>
+<button class ="scissors"><img src="images/scissors.png" alt="Scissors"></button>
+</div>
+<div class="scoreboard">
+<p id="pscore">You: 0</p>
+<p id="cscore">Computer : 0</p>
+</div>
 </body>
+
 </html>
