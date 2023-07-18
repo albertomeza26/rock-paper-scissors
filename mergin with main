@@ -1,0 +1,39 @@
+[33mcommit 66120abffc628338a1cd4e4ab304395687008d1e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/rps-ui[m[33m, [m[1;32mrps-ui[m[33m)[m
+Author: Alberto Meza <123982847+albertomeza26@users.noreply.github.com>
+Date:   Mon Jul 17 20:17:56 2023 -0700
+
+    Rock, Paper Scissors UI
+
+[33mcommit 1d686219071d52e1d7ca4e4773e227224b1043e8[m
+Author: Alberto Meza <123982847+albertomeza26@users.noreply.github.com>
+Date:   Mon Jul 17 20:17:21 2023 -0700
+
+    Rock, Paper, Scissors UI
+
+[33mcommit 8693882020881df501d82a8b142b35d41a36496b[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Alberto Meza <123982847+albertomeza26@users.noreply.github.com>
+Date:   Wed Jun 14 21:09:23 2023 -0700
+
+    Integrated different if else outcomes for player
+    and computer choices. Added function to keep score for a
+    5 round game and declare a winner in the end.
+
+[33mcommit 69b0ca2bb7c366b0fcf7f47b6c5d114f234016b2[m
+Author: Alberto Meza <123982847+albertomeza26@users.noreply.github.com>
+Date:   Wed Jun 14 20:52:56 2023 -0700
+
+    Add UpperCase for Computer and Player Selections
+    to create case insensitive added playRound if
+    else statements, but currently not outputting correctly.
+
+[33mcommit 8919c3044dd7b612a6d6459746be0467b86eaba3[m
+Author: Alberto Meza <123982847+albertomeza26@users.noreply.github.com>
+Date:   Tue Jun 13 18:08:43 2023 -0700
+
+    Added computer choice function to the RPS JS file
+
+[33mcommit 5557aebcd91705bbd18f5864bfd56179c8265119[m
+Author: albertomeza26 <123982847+albertomeza26@users.noreply.github.com>
+Date:   Tue Jun 13 17:37:07 2023 -0700
+
+    Initial commit
